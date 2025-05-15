@@ -1,0 +1,13 @@
+bison -d expr.y
+flex expr.l
+gcc y.tab.c lex.yy.c -o expr_calc -lfl
+
+
+bison -d expr.y
+lex expr.l
+cc y.tab.c lex.yy.c -o expr_calc -lfl
+
+
+lex file_name.l
+cc lex.yy.c -o file_name -ll
+./file_name < input.txt
